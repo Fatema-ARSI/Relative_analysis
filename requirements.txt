@@ -1,0 +1,11 @@
+streamlit==1.4.0
+plotly==5.5.0
+hydralit==1.0.12                   
+hydralit-components==1.0.9 
+pandas==1.4.0
+requests==2.27.1
+requests-html==0.10.0
+numpy==1.18.1
+yfinance==0.1.69
+openpyxl==3.0.9
+pillow=9.0.0
