@@ -28,6 +28,9 @@ class company_analysis(HydraHeadApp):
 
         #sidebar section
         df=pd.read_csv('company_stats.csv')
+        drop=np.where(df['Ticker']=="GOOG")
+        df.drop((206),inplace=True)
+
 
         #SIDEBAR
 
