@@ -149,13 +149,16 @@ class company_analysis(HydraHeadApp):
 
         opp=sector.loc[sector['Ticker']==watchlst,'Opportunities']
         opp=list(opp)
-        st.write('\n'.join(opp))
+        
+        for i in range(len(opp)):
+            st.write(opp[i])
 
         st.write(' ###### Threats for ' + str(selected_stock)+':')
 
         threat=sector.loc[sector['Ticker']==watchlst,'Threats']
         threat=list(threat)
-        st.write('\n'.join(threat))
+        for i in range(len(threat)):
+            st.write(threat[i])
 
 
         #-------------------existing untouched code------------------------------------------
