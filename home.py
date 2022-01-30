@@ -13,7 +13,7 @@ class home_page(HydraHeadApp):
         #sidebar section
         # Main panel
         image = Image.open('logo.jpg')
-        st.image(image, width = 1000)
+        st.image(image, width = 500)
         st.title('Relative Analysis')
         st.markdown("""
         This app showcase the Stock Valuation and Sector analysis.
