@@ -29,13 +29,18 @@ class sector_summary(HydraHeadApp):
         sorted_industry_unique2=df2['Industry'].unique()
         selected_industry2=st.sidebar.selectbox('Industry Challenges',sorted_industry_unique2,index=26)
 
-        st.write(' ###### Opportunities for ' + str(selected_industry)+':')
+        st.write(' ##### Opportunities for ' + str(selected_industry)+':')
         opp=df.loc[df['Industry']==selected_industry,'Trend']
         opp=list(opp)
-        st.write('\n'.join(opp))
+        
+        for i in range(len(opp)):
+            st.write(opp[i])
 
-        st.write('###### Challenges for ' + str(selected_industry2)+':')
+        st.write('##### Challenges for ' + str(selected_industry2)+':')
 
         threat=df2.loc[df2['Industry']==selected_industry2,'Challenges']
         threat=list(threat)
-        st.write('\n'.join(threat))
+        
+        for i in range(len(threat)):
+            st.write(threat[i])
+        
