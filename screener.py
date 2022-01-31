@@ -112,7 +112,7 @@ class company_analysis(HydraHeadApp):
 
         st.write(""" - In the above metrics, I have used PEG Ratio is also known as Price/Earnings to Growth Ratio which allow user to determine the valuation of the stock while considering the growth rate of the company's earnings.""")
 
-        st.write(""" - A good PEG Ratio is 1.0 i.e. if the company has the PEG ratio of 1.0 then the comapny is traded at its fair value. On the other hand, if the company has the PEG ratio of 1.37 then the company is traded above its fair valued by 37% and vice a versa.""")
+        st.write(""" - A good PEG Ratio is 1.0 i.e. if the company has the PEG ratio of 1.0 then the company is traded at its fair value. On the other hand, if the company has the PEG ratio of 1.37 then the company is traded above its fair valued by 37% and vice a versa.""")
 
         st.write(
 
