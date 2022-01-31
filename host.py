@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     app.add_app("Company Analysis", icon="", app=company_analysis())
     app.add_app("Sector Analysis", icon="", app=sector_analysis())
-    app.add_app("Sector Opportunity and Challenges", icon="", app=sector_summary())
+    app.add_app("Sector Opportunities and Challenges", icon="", app=sector_summary())
 
 
 
