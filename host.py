@@ -9,7 +9,7 @@ from PIL import Image
 
 if __name__ == '__main__':
     #this is the host application, we add children to it and that's it!
-    app = HydraApp(title='Relative Analysis',favicon="",nav_horizontal=True,hide_streamlit_markers=True)
+    app = HydraApp(title='Relative Analysis',favicon="",nav_horizontal=True, hide_streamlit_markers=True)
 
    # The Home app, this is the default redirect if no target app is specified.
     app.add_app("Home", icon="", app=home_page(),is_home=True)
