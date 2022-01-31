@@ -35,12 +35,12 @@ class company_analysis(HydraHeadApp):
         #SIDEBAR
 
         sorted_sector_unique=sorted(df['Sector'].unique())
-        selected_sector=st.sidebar.selectbox('Sector',sorted_sector_unique)
+        selected_sector=st.sidebar.selectbox('Sector',sorted_sector_unique,index=7)
 
         #sidebar section
         industry=df[(df['Sector']==selected_sector)]
         sorted_industry_unique=sorted(industry['Industry'].unique())
-        selected_industry=st.sidebar.selectbox('Industry',sorted_industry_unique)
+        selected_industry=st.sidebar.selectbox('Industry',sorted_industry_unique,index=-1)
         #sidebar section
         company=df[(df['Industry']==selected_industry)]
         sorted_comp_unique = sorted( company['Company'] )
