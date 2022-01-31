@@ -116,7 +116,7 @@ class company_analysis(HydraHeadApp):
 
         st.write(
 
-        " ###### In this case " + str(selected_stock) + "is " + str(col_label) + "by " + str(col_price)
+        " ###### In this case " + str(selected_stock) + " is " + str(col_label) + " by " + str(col_price)
 
         )
 
