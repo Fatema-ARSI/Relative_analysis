@@ -14,7 +14,7 @@ if __name__ == '__main__':
    # The Home app, this is the default redirect if no target app is specified.
     app.add_app("Home", icon="", app=home_page(),is_home=True)
 
-    app.add_app("Comapny Analysis", icon="", app=company_analysis())
+    app.add_app("Companyny Analysis", icon="", app=company_analysis())
     app.add_app("Sector Analysis", icon="", app=sector_analysis())
     app.add_app("Sector Opportunity and Challenges", icon="", app=sector_summary())
 
