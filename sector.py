@@ -75,14 +75,14 @@ class sector_analysis(HydraHeadApp):
         year=sect_wght.columns
         year=year.drop('GICS Sector')
 
-        st.write(""" - Any attempt to diversify the stock portfolio should include some attempt at diversification according to sector and industry. In fact, some investment strategies suggest a perfect balance of sectors, because any asector can be the best-performing group in any given year.""")
-        st.write(""" - In recent years, certain secors and industries hav performed better than others, and that is now reflected in the makeup of the S&P 500.""")
+        st.write(""" - Any attempt to diversify the stock portfolio should include some attempt at diversification according to sector and industry. In fact, some investment strategies suggest a perfect balance of sectors, because any sector can be the best-performing group in any given year.""")
+        st.write(""" - In recent years, certain sectors and industries have performed better than others, and that is now reflected in the makeup of the S&P 500.""")
         st.write(""" - The weighting of the S&P 500 should be important because the index does not always represent the types of companies performing the best in any given year. """)
         st.markdown("""  ###### In the pie-chart below, we can review the weightage of every sector in S&P 500 over the years: """)
 
 
 
-        selected_year=st.selectbox('Select Year',year)
+        selected_year=st.selectbox('Select a Year',year)
 
         labels=sect_wght["GICS Sector"]
         values=sect_wght[selected_year]
