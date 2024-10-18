@@ -5,7 +5,7 @@ hydralit-components==1.0.10
 pandas==2.2.3
 requests==2.32.3
 requests-html==0.10.0
-numpy
+numpy==2.1.2
 yfinance
 openpyxl==3.0.9
 pillow
