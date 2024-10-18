@@ -10,3 +10,4 @@ yfinance
 openpyxl==3.0.9
 pillow
 xlrd >= 1.0.0
+numpy.lib
