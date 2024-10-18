@@ -10,4 +10,3 @@ yfinance
 openpyxl
 pillow
 xlrd
-numpy.lib.arraysetops
