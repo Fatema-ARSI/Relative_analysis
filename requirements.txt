@@ -10,5 +10,3 @@ yfinance
 openpyxl
 pillow
 xlrd
-python
-pip
