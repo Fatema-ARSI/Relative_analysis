@@ -2,7 +2,7 @@ streamlit
 plotly
 hydralit              
 hydralit-components 
-pandas
+pandas==2.2.3
 requests
 requests-html
 numpy
