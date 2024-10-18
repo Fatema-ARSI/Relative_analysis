@@ -1,4 +1,4 @@
-streamlit==1.4.0
+streamlit==1.39.0
 plotly==5.5.0
 hydralit==1.0.12                   
 hydralit-components==1.0.9 
