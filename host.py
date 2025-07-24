@@ -283,7 +283,7 @@ def sector_analysis():
         #financial data by sector
         st.markdown("""  - #### Statistical Data """)
 
-        sect_data=pd.read_excel(r'pedata.xlsx')
+        sect_data=pd.read_excel(r'pedata.xls')
 
         # Filtering data
         df_selected_industry = sect_data[ (sect_data['Industry'].isin(selected_industry)) ]
