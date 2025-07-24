@@ -49,9 +49,9 @@ class company_analysis(HydraHeadApp):
         stock=stock.to_string(header=False,index=False)
 
 
-        tickerData=yf.Ticker(stock)
-        string_logo='<img src=%s>' % tickerData.info['logo_url']
-        st.markdown(string_logo,unsafe_allow_html=True)
+        #tickerData=yf.Ticker(stock)
+        #string_logo='<img src=%s>' % tickerData.info['logo_url']
+        #st.markdown(string_logo,unsafe_allow_html=True)
 
         string_name=selected_comp
         st.header('*%s*' % string_name)
