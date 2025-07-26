@@ -6,6 +6,7 @@ import numpy as np
 import yfinance as yf
 import requests
 import plotly.graph_objects as go
+import base64
 #from home import home_page
 #from screener import company_analysis
 #from sector import sector_analysis
@@ -19,9 +20,24 @@ def home_page():
 
     #-------------------existing untouched code------------------------------------------
 
-    image = Image.open('logo.jpg')
-    st.image(image, width=400)
-    st.title('Relative Analysis')
+    st.markdown("""
+           <div style="text-align: center;">
+           <h1 style="color:#0A1E3F;"> Relative Analysis </h1>
+           </div>
+           """, unsafe_allow_html=True)
+    
+    # --- logo ---
+    # Read and encode the logo image to base64
+    with open("logo.jpg", "rb") as file:
+        contents = file.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+
+    # Use HTML with centered div to display the image
+    st.markdown(
+        f'<div style="text-align:center;"><img src="data:image/jpg;base64,{data_url}" alt="logo" width="500"></div>',
+        unsafe_allow_html=True,
+    )
+
     st.markdown("""
     Welcome to the **Relative Analysis App**, designed for professional stock valuation and sector analytics.
     
