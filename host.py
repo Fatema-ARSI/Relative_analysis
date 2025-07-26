@@ -143,19 +143,28 @@ def Company_Analysis():
     col1, col2, col3 = st.columns(3)
     col2.metric(label=watchlst, value=col_price, delta=col_label)
     
+    st.write(""" **In the above metrics, I have included the PEG ratio (Price/Earnings to Growth ratio), which helps assess a stock's valuation while accounting for the company's earnings growth rate.** """)
+
     st.markdown("""
-    **Note:** The PEG ratio assesses stock valuation relative to growth.
-    - PEG = 1 → Fair Valued
-    - PEG > 1 → Over Valued
-    - PEG < 1 → Under Valued
-    Example: PEG of 1.37 indicates a 37% premium over fair value.""")
-    
-    st.write(f"#### {selected_stock} is {col_label} by {col_price}.")
+    A **PEG ratio of 1.0** typically indicates that a stock is fairly valued.
+
+    * If a company's PEG ratio is **above 1.0**, it may be **overvalued** relative to its growth.
+    * If it's **below 1.0**, it may be **undervalued**.
+
+    For example, a PEG ratio of **1.37** suggests the company is trading at a **37% premium** to its fair value.
+
+    """)
+
+    st.write(
+
+    " ###### In this case " + str(selected_stock) + " is " + str(col_label) + " by " + str(col_price)
+
+    )
 
     
     # Statistical Data Table
     
-    st.markdown("### Statistical Data")
+    st.markdown("#### Statistical Data")
 
     
     hide_table_index = """
