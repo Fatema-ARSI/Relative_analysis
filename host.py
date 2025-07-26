@@ -196,7 +196,7 @@ def Company_Analysis():
     st.write(f"###### Threats for {selected_stock}:")
     threats = sector_summary.loc[sector_summary['Ticker'] == watchlst, 'Threats'].tolist()
     for threat in threats:
-        st.write(f"- {threat}")
+        st.write(f" {threat}")
         
 
         #-------------------existing untouched code------------------------------------------
