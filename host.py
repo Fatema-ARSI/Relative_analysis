@@ -122,7 +122,71 @@ def Company_Analysis():
     
     df['Value_label'] = df['PEG Ratio'].apply(to_value)
     df['Value_percent'] = abs(df['PEG Ratio'] - 1) * 100
+    
+    def round_value(val):
+        return round(val, 2) if val > 1 else round(val, 3)
+        
+    # Prepare comparable companies dataframe
+    compet = df[df['Ticker'].isin(peer_co)]
+    
+    st.markdown("### Comparable Companies")
+    st.write("Choose a company from the list below to determine valuation status.")
+    
+    selected_stock = st.selectbox("", compet['Company'].tolist())
+    watchlst = df.loc[df['Company'] == selected_stock, 'Ticker'].values[0]
+    
+    col_df = df.loc[df['Ticker'] == watchlst].iloc[0]
+    col_price = f"{round_value(col_df['Value_percent'])}%"
+    col_label = col_df['Value_label']
+    
+    col1, col2, col3 = st.columns(3)
+    col2.metric(label=watchlst, value=col_price, delta=col_label)
+    
+    st.markdown("""
+    **Note:** The PEG ratio assesses stock valuation relative to growth.
+    - PEG = 1 → Fair Valued
+    - PEG > 1 → Over Valued
+    - PEG < 1 → Under Valued
+    Example: PEG of 1.37 indicates a 37% premium over fair value.""")
+    
+    st.write(f"#### {selected_stock} is {col_label} by {col_price}.")
 
+    
+    # Statistical Data Table
+    
+    st.markdown("### Statistical Data")
+
+    
+    hide_table_index = """
+    <style>
+    tbody th {display:none}
+    .blank {display:none}
+    </style>"""
+    
+    st.markdown(hide_table_index, unsafe_allow_html=True)
+    
+    st.write(f"Data Dimension: {compet.shape[0]} rows and {compet.shape[1]} columns.")
+    
+    st.table(compet[[
+        "Company", "Ticker", "Current Share Price", "52 Weeks High", "Equity Value",
+        "Enterprise Value", "Beta", "LTM Sales", "Debt/Equity", "EV/Sales",
+        "P/E", "EBITDA", "EV/EBITDA", "PEG Ratio"]])
+    
+    st.write("Data is as of 26/01/2022")
+    
+    # Company Analysis - Opportunities and Threats
+    st.markdown("### Company Analysis")
+    sector_summary = pd.read_csv('summary_stock.csv')
+    
+    st.write(f"#### Opportunities for {selected_stock}:")
+    opportunities = sector_summary.loc[sector_summary['Ticker'] == watchlst, 'Opportunities'].tolist()
+    for opp in opportunities:
+        st.write(f"- {opp}")
+        
+    st.write(f"#### Threats for {selected_stock}:")
+    threats = sector_summary.loc[sector_summary['Ticker'] == watchlst, 'Threats'].tolist()
+    for threat in threats:
+        st.write(f"- {threat}")
         
 
         #-------------------existing untouched code------------------------------------------
