@@ -191,7 +191,7 @@ def Company_Analysis():
     st.write(f"###### Opportunities for {selected_stock}:")
     opportunities = sector_summary.loc[sector_summary['Ticker'] == watchlst, 'Opportunities'].tolist()
     for opp in opportunities:
-        st.write(f"- {opp}")
+        st.write(f" {opp}")
         
     st.write(f"###### Threats for {selected_stock}:")
     threats = sector_summary.loc[sector_summary['Ticker'] == watchlst, 'Threats'].tolist()
