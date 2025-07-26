@@ -39,18 +39,33 @@ def home_page():
     )
 
     st.markdown("""
-    Welcome to the **Relative Analysis App**, designed for professional stock valuation and sector analytics.
+    ### Overview
+
+    This application provides **comprehensive stock valuation and sector analysis**, designed to assist finance professionals and enthusiasts in making informed decisions.
+
+    Navigate through the app using the menu to explore:
+
+    - **Company Analysis**: Assess valuation metrics and comparable companies.
+    - **Sector Analysis**: Gain insights into sector-level financial metrics and trends.
+    - **Sector Opportunities & Challenges**: Understand sector-specific growth drivers and risks.
+
+    """)
     
-    Navigate using the menu to explore:
-    - **Company Analysis**: Evaluate comparable companies’ valuations using key financial ratios.
-    - **Sector Analysis**: Dive into sector and industry performance with visual insights.
-    - **Sector Opportunities and Challenges**: Understand current market trends and risks.
-    
-    *Disclaimer*: This app is for informational purposes and does not constitute financial advice.
-    
-    **Libraries used:** Yahoo Finance, Pandas, Streamlit, Plotly, Hydralit
+    # --- Disclaimer ---
+    st.markdown("""
+    ### ⚠️ Disclaimer
+
+    This tool is intended for **informational purposes only** and does not constitute investment advice.
     """)
 
+    # --- Footer ---
+    st.markdown("""
+    ---
+    **🔧 Powered by:**
+       `Yahoo Finance` · `Pandas` · `Streamlit` · `Plotly` · `Hydralit` 
+
+    """)
+    st.write("")
 
     #-------------------existing untouched code------------------------------------------
 
