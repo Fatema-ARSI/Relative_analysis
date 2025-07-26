@@ -20,21 +20,21 @@ def home_page():
     #-------------------existing untouched code------------------------------------------
 
     image = Image.open('logo.jpg')
-    st.image(image, width = 500)
+    st.image(image, width=400)
     st.title('Relative Analysis')
     st.markdown("""
-    **This app showcases stock valuation and sector analysis.**
-
-    Please use the navigation bar to explore the following sections:
-
-    * **Company Analysis** – for analyzing comparable companies
-    * **Sector Analysis** – for a detailed view of each sector
-    * **Sector Opportunities and Challenges** – for insights into sector trends and industry threats in 2022
-
-    **Note:** This app is intended for informational purposes only.
-
-    **Python libraries used**: `Yahoo Finance`, `Pandas`, `Streamlit`, `Plotly`,`Hydralit`
+    Welcome to the **Relative Analysis App**, designed for professional stock valuation and sector analytics.
+    
+    Navigate using the menu to explore:
+    - **Company Analysis**: Evaluate comparable companies’ valuations using key financial ratios.
+    - **Sector Analysis**: Dive into sector and industry performance with visual insights.
+    - **Sector Opportunities and Challenges**: Understand current market trends and risks.
+    
+    *Disclaimer*: This app is for informational purposes and does not constitute financial advice.
+    
+    **Libraries used:** Yahoo Finance, Pandas, Streamlit, Plotly, Hydralit
     """)
+
 
     #-------------------existing untouched code------------------------------------------
 
