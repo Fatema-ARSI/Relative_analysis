@@ -100,7 +100,8 @@ def Company_Analysis():
     stock = df.loc[df['Company'] == selected_comp, 'Ticker'].values[0]
 
     # --- MAIN PAGE ---
-    st.markdown(f"<h2 style='text-align:center;'>*{selected_comp} ({stock})*</h2>", unsafe_allow_html=True)
+    string_name=selected_comp
+    st.header('*%s*' % string_name)
 
     # Fetch peer companies from Polygon API
     api_key = 'KwhdgIMbfV_cfyMTVQ_524WpmcVTXStN'
