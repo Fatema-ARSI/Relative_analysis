@@ -110,6 +110,21 @@ def Company_Analysis():
     peer_co.append(stock)
 
 
+    # Define valuation helper functions
+    def to_value(ratio):
+        ratio = float(ratio)
+    if ratio < 1.0:
+        return 'Under Valued'
+    elif ratio == 1.0:
+        return 'Fair Valued'
+    else:
+        return 'Over Valued'
+    
+    df['Value_label'] = df['PEG Ratio'].apply(to_value)
+    df['Value_percent'] = abs(df['PEG Ratio'] - 1) * 100
+
+        
+
         #-------------------existing untouched code------------------------------------------
 
 @app.addapp(title="Sector Analysis")
