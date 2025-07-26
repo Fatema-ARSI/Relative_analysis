@@ -87,27 +87,27 @@ def Company_Analysis():
     sorted_sector_unique=sorted(df['Sector'].unique())
     selected_sector=st.sidebar.selectbox('Sector',sorted_sector_unique,index=7)
 
-     #Industry selection filtered by sector
-     industry = df[df['Sector'] == selected_sector]
-     sorted_industry_unique = sorted(industry['Industry'].unique())
-     selected_industry = st.sidebar.selectbox('Industry', sorted_industry_unique)
+    #Industry selection filtered by sector
+    industry = df[df['Sector'] == selected_sector]
+    sorted_industry_unique = sorted(industry['Industry'].unique())
+    selected_industry = st.sidebar.selectbox('Industry', sorted_industry_unique)
 
-     # Company selection filtered by industry
-     company = df[df['Industry'] == selected_industry]
-     sorted_comp_unique = sorted(company['Company'])
-     selected_comp = st.sidebar.selectbox('Company', sorted_comp_unique)
+    # Company selection filtered by industry
+    company = df[df['Industry'] == selected_industry]
+    sorted_comp_unique = sorted(company['Company'])
+    selected_comp = st.sidebar.selectbox('Company', sorted_comp_unique)
 
-     stock = df.loc[df['Company'] == selected_comp, 'Ticker'].values[0]
+    stock = df.loc[df['Company'] == selected_comp, 'Ticker'].values[0]
 
-     # --- MAIN PAGE ---
-     st.markdown(f"<h2 style='text-align:center;'>*{selected_comp} ({stock})*</h2>", unsafe_allow_html=True)
+    # --- MAIN PAGE ---
+    st.markdown(f"<h2 style='text-align:center;'>*{selected_comp} ({stock})*</h2>", unsafe_allow_html=True)
 
-     # Fetch peer companies from Polygon API
-     api_key = 'KwhdgIMbfV_cfyMTVQ_524WpmcVTXStN'
-     api_url = f'https://api.polygon.io/v1/meta/symbols/{stock}/company?apiKey={api_key}'
-     response = requests.get(api_url).json()
-     peer_co = response.get('similar', [])
-     peer_co.append(stock)
+    # Fetch peer companies from Polygon API
+    api_key = 'KwhdgIMbfV_cfyMTVQ_524WpmcVTXStN'
+    api_url = f'https://api.polygon.io/v1/meta/symbols/{stock}/company?apiKey={api_key}'
+    response = requests.get(api_url).json()
+    peer_co = response.get('similar', [])
+    peer_co.append(stock)
 
 
         #-------------------existing untouched code------------------------------------------
