@@ -185,15 +185,15 @@ def Company_Analysis():
     st.write("Data is as of 26/01/2022")
     
     # Company Analysis - Opportunities and Threats
-    st.markdown("### Company Analysis")
+    st.markdown("#### Company Analysis")
     sector_summary = pd.read_csv('summary_stock.csv')
     
-    st.write(f"#### Opportunities for {selected_stock}:")
+    st.write(f"###### Opportunities for {selected_stock}:")
     opportunities = sector_summary.loc[sector_summary['Ticker'] == watchlst, 'Opportunities'].tolist()
     for opp in opportunities:
         st.write(f"- {opp}")
         
-    st.write(f"#### Threats for {selected_stock}:")
+    st.write(f"###### Threats for {selected_stock}:")
     threats = sector_summary.loc[sector_summary['Ticker'] == watchlst, 'Threats'].tolist()
     for threat in threats:
         st.write(f"- {threat}")
