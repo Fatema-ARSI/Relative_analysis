@@ -130,7 +130,7 @@ def Company_Analysis():
     # Prepare comparable companies dataframe
     compet = df[df['Ticker'].isin(peer_co)]
     
-    st.markdown("### Comparable Companies")
+    st.markdown("## Comparable Companies")
     st.write("Choose a company from the list below to determine valuation status.")
     
     selected_stock = st.selectbox("", compet['Company'].tolist())
