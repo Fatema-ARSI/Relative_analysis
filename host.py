@@ -358,7 +358,7 @@ def sector_summary():
 
         st.write('##### Challenges for ' + str(selected_industry2)+':')
 
-        threat=df2.loc[df2['Industry']==selected_industry2,'Challenges'].tolist()
+        challenges=df2.loc[df2['Industry']==selected_industry2,'Challenges'].tolist()
 
         for i, item in enumerate(challenges, 1):
             st.markdown(f"""
