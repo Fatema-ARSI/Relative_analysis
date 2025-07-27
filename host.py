@@ -342,7 +342,7 @@ def sector_summary():
 
         st.write(' ##### Opportunities for ' + str(selected_industry)+':')
     
-        opp=df.loc[df['Industry']==selected_industry,'Trend'].tolist()
+        opps=df.loc[df['Industry']==selected_industry,'Trend'].tolist()
     
         for i, item in enumerate(opps, 1):
             st.markdown(f"""
