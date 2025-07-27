@@ -337,6 +337,8 @@ def sector_summary():
         ## main page
         st.markdown("#### 🌐 Industry-Specific Trends & Challenges")
         st.markdown(""" Explore **key opportunities** and **emerging challenges** faced by different industries based on qualitative research and expert insights.""")
+        st.write("")
+        st.write("")
 
         st.markdown(f"💡 Opportunities in **{selected_industry}**")
 
