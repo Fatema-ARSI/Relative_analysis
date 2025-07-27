@@ -209,7 +209,7 @@ def sector_analysis():
 
     #SIDEBAR CODE
 
-        st.sidebar.header('User Input Features')
+        st.sidebar.header("Filter Parameters")
 
         df=pd.read_csv('company_stats.csv')
 
@@ -229,6 +229,8 @@ def sector_analysis():
             #html=pd.read_html(url, header=0)
             #data=html[0]
             #return data
+    
+        st.markdown("### 🧭 Sector Weighting in the S&P 500")
 
 
         #graph code
