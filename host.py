@@ -328,28 +328,45 @@ def sector_summary():
 
         #SIDEBAR
 
-        st.sidebar.header('User Input Features')
+        st.sidebar.header('Select Industry')
         sorted_industry_unique=df['Industry'].unique()
         selected_industry=st.sidebar.selectbox('Industry Oppotunity',sorted_industry_unique,index=60)
         sorted_industry_unique2=df2['Industry'].unique()
         selected_industry2=st.sidebar.selectbox('Industry Challenges',sorted_industry_unique2,index=26)
 
-        st.write(' ##### Opportunities for ' + str(selected_industry)+':')
-        opp=df.loc[df['Industry']==selected_industry,'Trend']
-        opp=list(opp)
+        ## main page
+        st.markdown("#### 🌐 Industry-Specific Trends & Challenges")
+        st.markdown(""" Explore **key opportunities** and **emerging challenges** faced by different industries based on qualitative research and expert insights.""")
 
-        for i in range(len(opp)):
-            st.write(opp[i])
-        st.write("")
-        st.write("")
+        st.markdown(f"💡 Opportunities in **{selected_industry}**")
+
+        st.write(' ##### Opportunities for ' + str(selected_industry)+':')
+    
+        opp=df.loc[df['Industry']==selected_industry,'Trend'].tolist()
+    
+        for i, item in enumerate(opps, 1):
+            st.markdown(f"""
+                <div style="background-color:#e8f5e9; padding:15px; border-radius:10px; margin-bottom:10px;">
+                    <b>📌 Opportunity {i}:</b> {item}
+                </div>
+            """, unsafe_allow_html=True)
+            
+        # Spacer
+        st.markdown("---")
+
+        st.markdown(f"⚠️ Challenges in **{selected_industry2}**")
 
         st.write('##### Challenges for ' + str(selected_industry2)+':')
 
-        threat=df2.loc[df2['Industry']==selected_industry2,'Challenges']
-        threat=list(threat)
+        threat=df2.loc[df2['Industry']==selected_industry2,'Challenges'].tolist()
 
-        for i in range(len(threat)):
-            st.write(threat[i])
+        for i, item in enumerate(challenges, 1):
+            st.markdown(f"""
+                 <div style="background-color:#fff3e0; padding:15px; border-radius:10px; margin-bottom:10px;">
+                     <b>🛑 Challenge {i}:</b> {item}
+                 </div>
+            """, unsafe_allow_html=True)
+            
         st.write("")
         st.write("")
         st.write("")
