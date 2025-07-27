@@ -341,8 +341,6 @@ def sector_summary():
         st.write("")
 
         st.markdown(f"💡 Opportunities in **{selected_industry}**")
-
-        st.write(' ##### Opportunities for ' + str(selected_industry)+':')
     
         opps=df.loc[df['Industry']==selected_industry,'Trend'].tolist()
     
@@ -356,8 +354,6 @@ def sector_summary():
         st.markdown("---")
 
         st.markdown(f"⚠️ Challenges in **{selected_industry2}**")
-
-        st.write('##### Challenges for ' + str(selected_industry2)+':')
 
         challenges=df2.loc[df2['Industry']==selected_industry2,'Challenges'].tolist()
 
