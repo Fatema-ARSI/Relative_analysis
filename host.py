@@ -230,7 +230,7 @@ def sector_analysis():
             #data=html[0]
             #return data
     
-        st.markdown("### 🧭 Sector Weighting in the S&P 500")
+        st.markdown("#### 🧭 Sector Weighting in the S&P 500")
 
 
         #graph code
