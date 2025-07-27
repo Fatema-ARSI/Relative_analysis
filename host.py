@@ -346,9 +346,8 @@ def sector_summary():
     
         for i, item in enumerate(opps, 1):
             st.markdown(f"""
-                <div style="background-color:#e8f5e9; padding:15px; border-radius:10px; margin-bottom:10px;">
-                    <b>📌 Opportunity {i}:</b> {item}
-                </div>
+                    <b>📌 Opportunity :</b> {item}
+
             """, unsafe_allow_html=True)
             
         # Spacer
@@ -362,9 +361,9 @@ def sector_summary():
 
         for i, item in enumerate(challenges, 1):
             st.markdown(f"""
-                 <div style="background-color:#fff3e0; padding:15px; border-radius:10px; margin-bottom:10px;">
-                     <b>🛑 Challenge {i}:</b> {item}
-                 </div>
+                 
+                     <b>🛑 Challenge :</b> {item}
+
             """, unsafe_allow_html=True)
             
         st.write("")
